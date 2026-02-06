@@ -1840,8 +1840,8 @@ msgstr "/!\\ ERREUR INTERNE /!\\"
 msgid "Please report the following bug:"
 msgstr "Merci de reporter le bogue suivant :"
 
-msgid "[yn]"
-msgstr "[on]"
+msgid "[ynYN]"
+msgstr "[onON]"
 
 msgid "Press any key to continue..."
 msgstr "Presser une touche pour continuer..."

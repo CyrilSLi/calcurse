@@ -1807,8 +1807,8 @@ msgstr "/!\\ ERROR INTERNO /!\\"
 msgid "Please report the following bug:"
 msgstr "Por favor reporte el siguiente error:"
 
-msgid "[yn]"
-msgstr "[yn]"
+msgid "[ynYN]"
+msgstr "[ynYN]"
 
 msgid "Press any key to continue..."
 msgstr "Presione cualquier tecla para continuar..."

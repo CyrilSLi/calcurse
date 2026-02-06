@@ -1721,7 +1721,7 @@ msgstr ""
 msgid "Please report the following bug:"
 msgstr ""
 
-msgid "[yn]"
+msgid "[ynYN]"
 msgstr ""
 
 msgid "Press any key to continue..."

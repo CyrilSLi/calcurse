@@ -252,7 +252,12 @@ int status_ask_choice(const char *message, const char choice[],
  */
 int status_ask_bool(const char *msg)
 {
-	return (status_ask_choice(msg, _("[yn]"), 2));
+	int choice = status_ask_choice(msg, _("[ynYN]"), 4);
+	if (choice >= 3) {
+		/* Convert 'Y' and 'N' or other variations to 'y' and 'n' */
+		choice = (choice - 1) % 2 + 1;
+	}
+	return choice;
 }
 
 /*

@@ -46,3 +46,5 @@ test/*.log
 test/*.trs
 test/run-test
 test/.deps/
+
+.vscode/

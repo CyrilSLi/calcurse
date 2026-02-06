@@ -1821,8 +1821,8 @@ msgstr "/!\\ ERRO INTERNO /!\\"
 msgid "Please report the following bug:"
 msgstr "Por favor, reporte o seguinte erro:"
 
-msgid "[yn]"
-msgstr "[sn]"
+msgid "[ynYN]"
+msgstr "[snSN]"
 
 msgid "Press any key to continue..."
 msgstr "Pressione qualquer tecla para continuar..."

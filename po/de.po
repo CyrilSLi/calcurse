@@ -1773,8 +1773,8 @@ msgstr "INTERNER FEHLER"
 msgid "Please report the following bug:"
 msgstr "Bitte den Programmfehler melden:"
 
-msgid "[yn]"
-msgstr "[jn]"
+msgid "[ynYN]"
+msgstr "[jnJN]"
 
 msgid "Press any key to continue..."
 msgstr "Eine beliebige Taste um fortzufahren..."
