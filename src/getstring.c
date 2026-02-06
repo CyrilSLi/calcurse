@@ -168,6 +168,18 @@ static void getstr_fixscr(struct getstr_status *st)
 }
 
 /*
+ * Check if a character is a word delimiter (for use with CTRL+LEFT/RIGHT).
+ * TODO: Implement a more sophisticated check including non-ASCII
+ * word characters, punctuation, whitespace, and word boundaries.
+ */
+static bool is_word_delimiter(char c)
+{
+  	char word_chars[] =
+      	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	return strchr(word_chars, c) == NULL;
+}
+
+/*
  * Getstring allows to get user input and to print it on a window,
  * even if noecho() is on. This function is also used to modify an existing
  * text (the variable string can be non-NULL).
@@ -257,6 +269,22 @@ enum getstr getstring(WINDOW * win, char *str, int l, int x, int y)
 		case CTRL('F'):
 			if (st.pos < st.len)
 				st.pos++;
+			break;
+		case KEY_SRIGHT:	/* move one word forward */
+			if (st.pos < st.len)
+				st.pos++;
+			while (st.pos < st.len
+			       && (is_word_delimiter(st.s[st.ci[st.pos - 1].offset])
+				   || !is_word_delimiter(st.s[st.ci[st.pos].offset])))
+				st.pos++;
+			break;
+		case KEY_SLEFT:	/* move one word backward */
+			if (st.pos > 0)
+				st.pos--;
+			while (st.pos > 0
+			       && (!is_word_delimiter(st.s[st.ci[st.pos - 1].offset])
+				   || is_word_delimiter(st.s[st.ci[st.pos].offset])))
+				st.pos--;
 			break;
 		case ESCAPE:	/* cancel editing */
 		case CTRL('G'):
